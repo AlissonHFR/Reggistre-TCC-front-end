@@ -1,0 +1,59 @@
+<mat-form-field *ngIf="!isDatePicker && !isAutoComplete" appearance="fill">
+    <mat-label>{{label}}</mat-label>
+    <input *ngIf="isNormalField" [type]="type" matInput [placeholder]="placeHolder" [formControlName]="name" />
+    <button *ngIf="button" [color]="buttonData!.color" mat-icon-button matSuffix [attr.aria-label]="buttonData!.text"
+        (click)="fieldButtonClick(buttonData!.text)">
+        <mat-icon>{{buttonData!.icon}}</mat-icon>
+    </button>
+
+    <mat-select *ngIf="isSelect" [formControlName]="name" [multiple]="isMultipleOptions">
+        <mat-option class="spinner" disabled *ngIf="loading">
+            <mat-spinner diameter="35"></mat-spinner>
+        </mat-option>
+
+        <ng-container *ngIf="!isServiceOptions(this.options)">
+            <mat-option *ngFor="let option of values" [value]="option">{{option}}</mat-option>
+        </ng-container>
+
+        <ng-container *ngIf="isServiceOptions(this.options)">
+            <mat-option *ngFor="let option of values" [value]="option[this.options.idKey!]">
+                {{option[this.options.dataKey!]}}
+            </mat-option>
+        </ng-container>
+
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill" *ngIf="isAutoComplete">
+    <mat-label>{{label}}</mat-label>
+    <input [type]="type" matInput [placeholder]="placeHolder" [formControlName]="name" [matAutocomplete]="auto"
+        (input)="!isServiceOptions(this.options) ? filter($event) : objFilter($event)" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option class="spinner" disabled *ngIf="loading">
+            <mat-spinner diameter="35"></mat-spinner>
+        </mat-option>
+        <mat-option class="spinner" disabled *ngIf="!match">
+            --- Não encontrado ---
+        </mat-option>
+
+        <ng-container *ngIf="!isServiceOptions(this.options)">
+            <mat-option *ngFor="let option of values" [value]="option">
+                {{option}}
+            </mat-option>
+        </ng-container>
+
+        <ng-container *ngIf="isServiceOptions(this.options)">
+            <mat-option *ngFor="let option of values" [value]='option[this.options.idKey!]'>
+                {{option[this.options.dataKey!]}}
+            </mat-option>
+        </ng-container>
+
+    </mat-autocomplete>
+</mat-form-field>
+
+<mat-form-field *ngIf="isDatePicker" appearance="fill">
+    <mat-label>{{label}}</mat-label>
+    <input matInput [formControlName]="name" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>

@@ -1,0 +1,137 @@
+.example-container {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  
+  .add-button {
+    padding: 0px !important;
+    width: 10px !important;
+    min-width: 50px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .top-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .field-filter {
+    max-width: 270px;
+    width: 30%;
+    min-width: 150px;
+    margin-top: 3%;
+    margin-left: auto;
+  }
+  
+  .field-filter-only {
+    width: 90%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .column-button {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .column-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .onlyButton {
+    text-align: center !important;
+  }
+  
+  .spinner-container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .no-matching-data {
+    padding-left: 24px;
+    min-height: 48px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 960px) {
+    mat-row::after, mat-header-row::after, mat-footer-row::after {
+      display: inline-block;
+      min-height: fit-content;
+      content: unset;
+    }
+    .mat-table {
+      border: 0;
+      vertical-align: middle
+    }
+    .mat-paginator {
+      margin-bottom: 5%;
+    }
+    .mat-table caption {
+      font-size: 1em;
+    }
+    mat-cell, mat-header-cell, mat-footer-cell {
+      padding-right: 10px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      word-wrap: break-word;
+      min-height: inherit;
+    }
+    mat-row, mat-header-row, mat-footer-row {
+      display: flex;
+      border-width: 0;
+      border-bottom-width: 1px;
+      border-style: solid;
+      align-items: center;
+      box-sizing: border-box;
+      justify-content: center;
+    }
+    .mat-table .mat-row {
+      border-bottom: 5px solid #ddd;
+      display: block;
+      min-height: 0px;
+    }
+    .mat-table .mat-cell {
+      padding-right: 24px;
+      padding-left: 24px;
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+      font-weight: bold;
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 35px;
+      padding-bottom: 2%;
+      padding-top: 2%;
+    }
+    .mat-table .mat-cell:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: .85em;
+    }
+    .mat-table .mat-cell:last-child {
+      border-bottom: 0;
+    }
+  }

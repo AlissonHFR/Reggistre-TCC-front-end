@@ -1,0 +1,65 @@
+<div class="top-content" *ngIf="tableConfig.addButton">
+    <button class="field-login-full-width add-button" mat-flat-button color="primary" (click)="addEntity()">
+      <mat-icon>add</mat-icon>
+    </button>
+  
+    <div class="field-filter">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="field-filter-only" *ngIf="!tableConfig.addButton">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <ng-container *ngFor="let entity of tableConfig.columnsAndData" matColumnDef="{{entity.dataKey}}">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> {{entity.column}} </mat-header-cell>
+        <mat-cell *matCellDef="let row" [attr.data-label]="entity.column">{{row[entity.dataKey]}}</mat-cell>
+      </ng-container>
+  
+      <ng-container *ngFor="let entityBtn of tableConfig.button" matColumnDef="{{entityBtn.column}}">
+        <mat-header-cell [ngClass]="displayedColumns?.length == 2 ? 'onlyButton' : ''" mat-header-cell *matHeaderCellDef>
+          {{entityBtn.column}} </mat-header-cell>
+        <mat-cell *matCellDef="let row" [attr.data-label]="entityBtn.column">
+          <div class="column-buttons" [ngClass]="displayedColumns?.length == 2 ? 'last' : ''">
+            <button *ngFor="let btnData of entityBtn.btnData; index as i;" mat-flat-button
+              [color]="btnData.btnColor === undefined ? 'primary' :btnData.btnColor"
+              (click)="buttonAction(btnData.btnText, row)"
+              [ngClass]="entityBtn.btnData.length > 1 ? i % 2 == 0 ? 'column-button' : '' : ''">
+              <ng-template [ngIf]="btnData.btnText.startsWith('icon-')">
+                <mat-icon>{{ btnData.btnText.substr(5) }}</mat-icon>
+              </ng-template>
+              <ng-template [ngIf]="!btnData.btnText.startsWith('icon-')">
+                {{ btnData.btnText }}
+              </ng-template>
+            </button>
+          </div>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+  
+    </mat-table>
+  
+    <div class="spinner-container" *ngIf="incomingData.loading$ | async">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  
+    <div class="no-matching-data" *ngIf="!hasMatch">
+      <span>Nenhum valor encontado com "{{filterValue}}"</span>
+    </div>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>

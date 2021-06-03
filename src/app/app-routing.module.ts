@@ -15,6 +15,10 @@ const routes: Routes = [
     //canActivate: [ActiveWhenLogged],
     children: [
       {
+        path: '',
+        component: DashboardComponent
+      },
+      {
         path: 'users',
         component: LoginComponent
       },

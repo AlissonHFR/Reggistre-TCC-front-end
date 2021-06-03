@@ -6,62 +6,61 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <app-item-menu title="Receitas">
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Cadastro</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Histórico</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Listar Todas</span>
         </a>
       </app-item-menu>
       <app-item-menu title="Despesas">
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Cadastro</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Histórico</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Listar Todas</span>
         </a>
       </app-item-menu>
       <app-item-menu title="Categorias">
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Cadastro</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Histórico</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Listar Todas</span>
         </a>
       </app-item-menu>
       <app-item-menu title="Perfil">
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Recompensas</span>
         </a>
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Uso do App</span>
         </a>
       </app-item-menu>
       <app-item-menu title="Configurações">
-        <a *itemMenulChild (click)="sidenav.close()" mat-list-item routerLink="users">
+        <a *itemMenulChild mat-list-item routerLink="users">
           <span class="title-panel">Alterar senha</span>
         </a>
       </app-item-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="">
-      <span>Reggistre-app</span>
+    <mat-toolbar color="primary">
+      <span >Reggistre-app</span>
       <span class="example-spacer"></span>
       <button mat-icon-button (click)="logout()">
         <mat-icon>logout</mat-icon>
       </button>
     </mat-toolbar>
-    <app-dashboard></app-dashboard>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

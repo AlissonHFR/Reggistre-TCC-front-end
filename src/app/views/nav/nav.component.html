@@ -1,0 +1,66 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <app-item-menu title="Receitas">
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Cadastro</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Histórico</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Listar Todas</span>
+        </a>
+      </app-item-menu>
+      <app-item-menu title="Despesas">
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Cadastro</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Histórico</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Listar Todas</span>
+        </a>
+      </app-item-menu>
+      <app-item-menu title="Categorias">
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Cadastro</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Histórico</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Listar Todas</span>
+        </a>
+      </app-item-menu>
+      <app-item-menu title="Perfil">
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Recompensas</span>
+        </a>
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Uso do App</span>
+        </a>
+      </app-item-menu>
+      <app-item-menu title="Configurações">
+        <a *itemMenulChild mat-list-item routerLink="users">
+          <span class="title-panel">Alterar senha</span>
+        </a>
+      </app-item-menu>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span >Reggistre-app</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

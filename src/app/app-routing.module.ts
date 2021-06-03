@@ -14,10 +14,10 @@ const routes: Routes = [
     component: NavComponent,
     //canActivate: [ActiveWhenLogged],
     children: [
-      // {
-      //   path: 'users',
-      //   component: UserComponent
-      // },
+      {
+        path: 'users',
+        component: LoginComponent
+      },
       // {
       //   path: 'users/new',
       //   component: UserCreateComponent

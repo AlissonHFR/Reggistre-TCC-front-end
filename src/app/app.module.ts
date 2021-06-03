@@ -8,13 +8,17 @@ import { LoginComponent } from './views/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { NavComponent } from './views/nav/nav.component';
+import { ItemMenuComponent } from './item-menu/item-menu.component';
+import { ItemMenulChildDirective } from './item-menu/item-menu-child.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavComponent
+    NavComponent,
+    ItemMenuComponent,
+    ItemMenulChildDirective
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{data.message}}</p>
+</div>
+<div *ngIf="data.buttons === undefined" class="actions" mat-dialog-actions>
+  <button mat-button color="primary" (click)="onOkClick()">Ok</button>
+</div>
+
+<div *ngIf="data.buttons !== undefined" class="actions" mat-dialog-actions>
+  <ng-container *ngFor="let button of data.buttons">
+    <button mat-button [color]="button.color" [mat-dialog-close]="button.text">{{button.text}}</button>
+  </ng-container>
+</div>

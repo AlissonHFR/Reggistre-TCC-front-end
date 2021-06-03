@@ -9,8 +9,8 @@ import {
   ControlContainer,
   FormGroupDirective,
 } from '@angular/forms';
-import { DialogButton } from '../shared/interfaces/dialog-config.interface';
-import { ApiService } from '../shared/services/api.service';
+import { DialogButton } from '../../shared/interfaces/dialog-config.interface';
+import { ApiService } from '../../shared/services/api.service';
 
 
 type ServiceOption = { service: ApiService, dataKey?: string, idKey?: string };

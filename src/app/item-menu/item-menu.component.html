@@ -1,0 +1,19 @@
+<mat-expansion-panel *ngIf="!singlePanel" [class.mat-elevation-z0]="true">
+    <mat-expansion-panel-header>
+        <mat-icon class="panel-icon">{{icon}}</mat-icon>
+        <span class="title-panel">{{title}}</span>
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+        <ng-container *ngFor="let child of children">
+            <ng-container [ngTemplateOutlet]="child.itemTemplate"></ng-container>
+        </ng-container>
+    </mat-nav-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel *ngIf="singlePanel" [class.mat-elevation-z0]="true" hideToggle [(expanded)]="expand"
+    (click)="goToPath()">
+    <mat-expansion-panel-header>
+        <mat-icon class="panel-icon">{{icon}}</mat-icon>
+        <span class="title-panel">{{title}}</span>
+    </mat-expansion-panel-header>
+</mat-expansion-panel>

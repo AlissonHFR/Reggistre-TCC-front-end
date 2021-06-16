@@ -1,0 +1,70 @@
+<mat-card class="user-card {{class}}" style="opacity: 0.8;" (window:resize)="onResize($event)">
+
+    <div class="padding-filed text-center">
+      <h2 class="text-center">{{title}}</h2>
+    </div>
+  
+    <mat-card-content>
+      <form class="form-group" [formGroup]='user'>
+  
+        <div class="one-line">
+          <div class="padding-filed big-field">
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+  
+              <div fxFlex="50%" fxFlex.md="100%" fxFlex.xs="100%" fxFlex.sm="75%">
+  
+                <h4 class="field-top-label">Digite o nome completo:</h4>
+                <fields name="nomeCompleto" label="Nome completo" [isNormalField]="true"></fields>
+  
+              </div>
+              </div>
+            
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+              <div fxFlex="50%" fxFlex.xs="50%" fxFlex.sm="50%">
+                <h4 class="field-top-label">Nome do usuário:</h4>
+                <fields name="nomeUsuario" label="Nome usuário" [isNormalField]="true"></fields>
+              </div>
+
+              <div fxFlex="50%" fxFlex.md="50%" fxFlex.xs="50%" fxFlex.sm="50%">
+  
+                <h4 class="field-top-label">Senha:</h4>
+                <fields name="senha" label="Senha"  [isNormalField]="true"></fields>
+  
+              </div>
+            </div>
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+              <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <h4 class="field-top-label">E-mail:</h4>
+                <fields name="email" label="E-mail" [isNormalField]="true"></fields>
+              </div>
+              <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <h4 class="field-top-label">E-mail alternativo:</h4>
+                <fields name="emailAlternativo" label="E-mail alternativo" [isNormalField]="true">
+                </fields>
+              </div>
+            </div>
+  
+  
+            <div class="padding-filed actions">
+  
+              <button class="field-login-full-width" mat-flat-button color="warn" (click)="goToForm()">
+                <mat-icon>
+                  clear
+                </mat-icon>
+              </button>
+  
+              <button class="field-login-full-width" mat-flat-button color="primary" (click)="createUser()">
+                <mat-icon>add</mat-icon>
+              </button>
+  
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
+

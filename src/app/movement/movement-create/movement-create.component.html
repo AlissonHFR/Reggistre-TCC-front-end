@@ -1,0 +1,66 @@
+<mat-card class="movement-card {{class}}" style="opacity: 0.8;" (window:resize)="onResize($event)">
+
+    <div class="padding-filed text-center">
+      <h2 class="text-center">{{title}}</h2>
+    </div>
+  
+    <mat-card-content>
+      <form class="form-group" [formGroup]='movement'>
+  
+        <div class="one-line">
+          <div class="padding-filed big-field">
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+  
+              <div fxFlex="50%" fxFlex.md="100%" fxFlex.xs="100%" fxFlex.sm="75%">
+  
+                <h4 class="field-top-label">Digite o nome:</h4>
+                <fields name="nome" label="Nome" [isNormalField]="true"></fields>
+  
+              </div>
+              <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <h4 class="field-top-label">Data:</h4>
+                <fields name="data" label="Data" [isDatePicker]="true"></fields>
+                </div>
+              </div>
+            
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+              <div fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="100%">
+                <h4 class="field-top-label">Descrição:</h4>
+                <fields name="descricao" label="Descrição" [isNormalField]="true"></fields>
+              </div>
+            </div>
+  
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px grid">
+              <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <h4 class="field-top-label">Tipo Movimentação:</h4>
+                <fields name="tipoMovimentacao" label="Tipo Movimentação" [isNormalField]="true"></fields>
+              </div>
+              <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                <h4 class="field-top-label">Valor:</h4>
+                <fields name="valor" label="Valor" [isNormalField]="true">
+                </fields>
+              </div>
+            </div>
+  
+  
+            <div class="padding-filed actions">
+  
+              <button class="field-login-full-width" mat-flat-button color="warn" (click)="goToForm()">
+                <mat-icon>
+                  clear
+                </mat-icon>
+              </button>
+  
+              <button class="field-login-full-width" mat-flat-button color="primary" (click)="createMovement()">
+                <mat-icon>add</mat-icon>
+              </button>
+  
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

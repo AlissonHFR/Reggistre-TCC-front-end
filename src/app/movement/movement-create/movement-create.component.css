@@ -1,0 +1,54 @@
+.movement-card {
+    margin-top: 2%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+
+.field-top-label {
+    font-weight: 500;
+}
+
+::ng-deep mat-form-field {
+    width: 100%;
+}
+
+::ng-deep .mat-grid-tile .mat-figure {
+    display: block !important;
+}
+
+.padding-filed {
+    padding: 10px 15px;
+}
+
+.button-style {
+    padding-left: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions button:first-child {
+    margin-right: 15px;
+}
+
+.wrapper {
+    margin-left: 15px;
+}
+
+::ng-deep .mat-grid-list {
+    margin-right: 18px;
+}
+
+.toggle {
+    display: flex;
+    padding: 0;
+    margin-bottom: 18px;
+}
+
+.toggle>h4 {
+    margin-right: 10px;
+}

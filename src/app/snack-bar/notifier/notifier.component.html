@@ -1,0 +1,5 @@
+<div class="main-content">
+    <div class="message">{{data.message}}</div>
+    <button *ngIf="!loading" class="btn" (click)="snackBarRef.dismiss()" mat-button>{{data.action}}</button>
+    <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+</div>

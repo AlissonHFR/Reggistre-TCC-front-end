@@ -1,0 +1,28 @@
+<mat-card class="category-card {{class}}" style="opacity: 0.8;" (window:resize)="onResize($event)">
+
+    <div class="padding-filed text-center">
+        <h2 class="text-center">{{title}}</h2>
+    </div>
+
+    <mat-card-content>
+        <form class="form-group" [formGroup]='category'>
+
+            <div fxLayout="row wrap" fxLayoutAlign="end end" fxLayoutGap="10px grid">
+                <div fxFlex="100%">
+                    <h4 class="field-top-label">Digite o nome:</h4>
+                    <fields name="nome" label="Nome da categoria" [isNormalField]="true"></fields>
+                </div>
+            </div>
+
+            <div class="padding-filed actions">
+                <button class="field-login-full-width" mat-flat-button color="warn" (click)="goToForm()">
+                    <mat-icon>
+                        clear</mat-icon>
+                </button>
+                <button class="field-login-full-width" mat-flat-button color="primary" (click)="createCategory()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
